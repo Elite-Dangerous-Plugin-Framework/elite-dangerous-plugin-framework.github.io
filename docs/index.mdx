@@ -1,0 +1,62 @@
+---
+title: "Elite: Dangerous Plugin Framework"
+description: Tool to 
+template: splash # Remove or comment out this line to display the site sidebar on this page.
+hero:
+  tagline: Congrats on setting up a new Starlight project!
+  image:
+    file: ../../assets/edpf.svg
+  actions:
+    - text: Example Guide
+      link: /guides/example/
+      icon: right-arrow
+    - text: Read the Starlight docs
+      link: https://starlight.astro.build
+      icon: external
+      variant: minimal
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+## Next steps
+
+{/*
+<CardGrid stagger>
+	<LinkCard title="Update content" icon="pencil">
+		Edit `src/content/docs/index.mdx` to see this page change.
+	</LinkCard>
+	<LinkCard title="Change page layout" icon="document">
+		Delete `template: splash` in `src/content/docs/index.mdx` to display a
+		sidebar on this page.
+	</LinkCard>
+	<LinkCard title="Add new content" icon="add-document">
+		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	</LinkCard>
+	<LinkCard title="Configure your site" icon="setting">
+		Edit your `sidebar` and other config in `astro.config.mjs`.
+	</LinkCard>
+	<LinkCard title="Read the docs" icon="open-book">
+		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+	</LinkCard>
+</CardGrid>
+*/}
+
+### For users
+<CardGrid >
+	<LinkCard title="What is EDPF" description="A quick overview of the tool, what it does, and how it compares to other tooling."/>
+	<LinkCard title="Installation Guide" description="Instructions for getting EDPF up and running for both Windows and Linux."/>
+	<LinkCard title="Plugin Registry" description="Find and install plugins that fit your gameplay needs."/>
+</CardGrid>
+
+### For plugin developers
+<CardGrid>
+	<LinkCard title="What is a plugin" description="A look at what constitutes a Plugin and the steps needed to get a 'Hello World' Plugin running"/>
+	<LinkCard title="Templates and Examples" description="Quickstart templates and feature references to get you writing plugins quickly"/>
+	<LinkCard title="Common Standards" description="Do's and Don'ts when writing a plugin"/>
+</CardGrid>
+### For devs interested about the inner workings
+<CardGrid>
+	<LinkCard title="Building from Source" description="Get a devbuild running locally"/>
+	<LinkCard title="Architectural Overview" description="How is EDPF structured, how does it read Journals, load Plugins, talk and react to Plugins, etc."/>
+	<LinkCard title="Command and Event reference" description="Listing of all Tauri Commands and Emits, how their payload is structured and what piece of code is expected to call them."/>
+</CardGrid>
