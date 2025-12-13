@@ -1,0 +1,56 @@
+---
+title: "What is EDPF?"
+sidebar:
+  order: 10
+---
+
+In short, if you're familiar with [Elite: Dangerous Market Connector](https://github.com/EDCD/EDMarketConnector), [EDDiscovery](https://github.com/EDDiscovery/EDDiscovery) or [SrvSurvey](https://github.com/njthomson/SrvSurvey), then it's basically a tool that fills the same space, just that it takes a focus on not providing a default feature set, but enabling 3rd party developers to write their own integrations.
+
+If you don't know these tools, here a longer run-down: 
+
+> Elite: Dangerous is a video game set in space where you get to fly a spaceship and interact in a big 1-to-1 replica of our Milky Way. Each player gets to interact with and alter this vast galaxy. 
+> The game writes a log file (the "journal") for everything you do. Jump into a system? You get a new event in there. Switch ships? Yup - that's another event. Dock at a Station to look at the Market? You guessed it - the game writes another event.
+>
+> With the advent of this journal, tooling surrounding the game was set up by the community. 
+> This is how you have tools to help you [plot efficient ways through the milky way](https://www.spansh.co.uk/exact-plotter), [find locations to sell your goods](https://inara.cz/elite/market-traderoutes/), [find places to scan for profit](https://www.spansh.co.uk/exobiology) or [assist you in building your own systems](https://ravencolonial.com/), to name a few.
+> 
+> In short, all these tools rely on the journal, and the afforementioned tools send out updates about the galaxy by reading the journal and pushing updates to subscribers.
+> 
+
+EDPF aims to be one of those tools. But in addition to that, EDPF aims to also cover a separate nieche — namely to enable more individual tooling to be quickly developed, installed and used.
+
+## Motivation
+
+From those tools mentioned above, only [EDMC](https://github.com/EDCD/EDMarketConnector/wiki/Plugins) has a way to easily extend its functionality in the means of plugins. To enable this, EDMC imports Plugins as Python modules.
+Plugins then receive updates about the game via a callback function. This is simple, yet effective, when it comes to extending and adjusting EDMC to one's needs. 
+
+The core dev behind EDPF, CMDR WDX, has spent a significant time [developing](https://github.com/CMDR-WDX/EDMC-Massacres) [plugins](https://gitlab.com/gankers/EDMC-PvPBot) [for](https://gitlab.com/CMDR-WDX/edmc-raven-colonial) EDMC.
+EDPF is the attempt to curb some frustrations that arised during that time, caused primarily by the use of `tkinter` for UI and the gotcha's that come with relying on `python`, 
+as well as the lack of any opinionated ways of working. For example instead of having a streamlined way to update plugins, each plugin has to either roll its own or rely on manual updates.
+
+## Vision
+
+In the long run, the vision is to have a tool that gets rids of the annoying bits of using and developing plugins. 
+
+Devs should be able to spin up a new plugin with the click of a button with all the interactions between EDPF and the Plugin, Updates, Settings, … already handled so that they can focus on actually developing their integration.  
+Users should be able to install a plugin as simply as just searching for it from within EDPF — or, if its a private plugin, by just dragging the plugin into EDPF. No need to find a folder and extract the plugin there.
+Users should also be able to see what a plugin wants to do. For example if the plugin wants to read files other than the journal, the user should know about that. 
+
+Another key interest of EDPF is to handle UI for the plugins. EDPF lets the user rearrange, enable, disable and hide plugins, all without the plugins needing to implement anything for it. In the future, we plan on adding overlay support, such that plugins can just define Elements they want exposes as an overlay, with EDPF handling positioning and rendering.
+
+To summarize EDPF's goal, it's to be EDMC, except with a focus on the Plugin Lifecycle instead of connecting to Markets.
+
+### Roadmap
+
+#### v0.1 Minimal Viable Product
+
+This will be the initial release. It should have everything needed to get basic plugins working. 
+That is, have plugins receive journal updates, status updates, read and write settings, and of course display and run plugins.
+Besides that, the MVP contains a `core` plugin which will enable syncing with EDDN, as well as displaying your current status (Name, Ship, System), similar to how EDMC does it.
+
+You can see the progress of this release [in the following Github Project](https://github.com/orgs/Elite-Dangerous-Plugin-Framework/projects/1).
+
+#### v0.2 The Plugin Registry Update
+
+After the MVP, EDPF's priority will be to establish a plugin registry and means to easily install private plugins via Drag-and-Drop.
+The registry will be a way for plugin authors to submit their plugins into a registry. This way users will be able to easily discover and install it from within EDPF.

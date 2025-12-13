@@ -1,0 +1,31 @@
+---
+title: "Internal Documentation"
+sidebar:
+  badge: 
+    text: WIP
+    variant: tip
+---
+
+This section looks at the internals of EDPF, and how things work under the hood.
+
+To start off, EDPF uses [Tauri](https://tauri.app/). This implies a Backend written in Rust, with a Frontend written with a Frontend technology.
+All Web Views defined by EDPF use React.
+
+![A high-level overview of EDPF's architecture](./edpf-highlevel-overview.drawio.svg)
+
+This overview might be a bit too simplified, and expressing it like this doesn't do it justice. Let's split up the overview into two — the `Journal` path, and the `Plugin Loading and Asset Handling` path.
+
+
+## Journal
+
+EDPF uses rster2002's wonderful [`ed-journals`](https://github.com/rster2002/ed-journals) crate to handle listening and emitting journal / status file changes.
+These updates are then emitted using Tauri's IPC capabilities. A plugin's context is subscribed to the relevant event.
+
+`ed-journals` provides features to listen towards changes on the entire Journal directory, to iterate over just one file, and to listen for just one file, among other things. 
+It allows you to parse each Log Item into a Rust Struct, but we don't use it because the conversion from `JSON` → `ed-journals` → `JSON` results in changes. 
+In addition to that, reliance on the Structs means we require an EDPF update to handle newer files. Realisitically, Plugins would expect Journal items to not have been altered, 
+which is why we rely on the `Raw` family of listeners and iterators provided by `ed_journals`.
+
+:::caution[Partial Implementation]
+Please be aware that as of 2025-12-13, there are no listeners for the non-journal files like `Status.json` or `Outfitting.json` being created. 
+:::

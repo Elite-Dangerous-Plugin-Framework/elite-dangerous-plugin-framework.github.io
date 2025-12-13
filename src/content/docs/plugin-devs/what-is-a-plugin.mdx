@@ -1,0 +1,180 @@
+---
+title: "What is a Plugin?"
+sidebar:
+  order: 10
+---
+
+At it's core, a plugin is nothing more than a `main.js` containing a Web Component definition and a `manifest.json` that defines Metadata like Name, Description, Version, ways to Update, etc. about this plugin.
+
+A plugin is always structured like the following:
+
+import { FileTree } from '@astrojs/starlight/components';
+import { Icon } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+import { LinkButton } from '@astrojs/starlight/components';
+
+
+
+<FileTree>
+- your-plugin-id foldername = plugin id
+  - frontend your build output
+    - **index.js** your main bundle which contains your Web Component
+    - image.png Supporting assets like images, styles, …
+    - style.css
+    - README.md picked up automatically by Settings to render a README
+  - **manifest.json** Metadata about your Plugin
+  - frontend-src Not strictly needed, but convention to put your unbundled stuff here
+    - …
+
+
+</FileTree>
+*highlighted items **must** be present*
+
+
+## Manifest 
+
+<LinkButton
+  href="https://github.com/Elite-Dangerous-Plugin-Framework/elite-dangerous-plugin-framework/blob/main/src-tauri/src/plugins/plugin_manifest.rs"
+  variant="minimal"
+  icon="github"
+  iconPlacement="start"
+  target="_blank"
+>
+  Backend Reference
+</LinkButton>
+
+
+Each Plugin *must* define a `manifest.json`. This Manifest defines
+- a human-readable name 
+- optionally, a short description
+- optionally, URLs to where the Code is Hosted and where to get Support
+- optionally, which Version this is
+- optionally, a definition of where to look for updates
+- a manifest version
+
+### Minimal example
+
+Here is a `manifest.json` with just the bare minimals. This should be enough to get a "Hello World" Plugin going
+
+```json 
+// minimal-example/manifest.json
+{
+  "type": "v1alpha",
+  "name": "Hello World Minimal"
+}
+```
+
+As you can, there really isn't much here. Just a name and the `type`. The `type` defines the Version of the Manifest. `v1alpha` is not stable and is subject to contain breaking changes, but we will try our best to keep breaking changes to a minimum. Stable Version in the future will not have the `alpha` suffix.
+
+### Example with Updating
+
+:::caution[Not yet implemented]
+
+This Section about Update-Flows talks about the planned / designed approach. It is **not implemented**, and **subject to change**!
+::: 
+
+By defining the `remote_manifest` Property in the Manifest, you can define how EDPF should look for Plugin Updates. If the property is missing, EDPF will not attempt to do any updates.
+EDPF expects to resolve a `manifest.json` this way.
+This "remote" manifest **must** contain a `version` and it **must** contain a `versions` list.
+The former is used to check if your plugin is outdated. The latter is used to see which versions are all available.
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Tabs>
+  <TabItem label="GitReleaseAsset">
+```json {5, 7}
+// minimal-example-with-git-release-asset/manifest.json
+{
+  "type": "v1alpha",
+  "name": "Hello World Minimal",
+  "repository_url": "https://github.com/yourAccount/yourProject",
+  "remote_manifest": {
+    "type": "GitReleaseAsset"
+  }
+}
+```
+This strategy revolves around using Github and Gitlab Releases. EDPF will query the releases for your Plugin. It will look at the most recent release and expect a `manifest.json` to be one of the release fragments.
+
+At the initial implementation, only Github and Gitlab Releases will be supported. PRs are welcome to expand this.
+  </TabItem>
+    <TabItem label="Http">
+```json {6,7}
+// minimal-example-with-http/manifest.json
+{
+  "type": "v1alpha",
+  "name": "Hello World Minimal",
+  "remote_manifest": {
+    "type": "Http",
+    "address": "https://example.com/path/to/manifest.json"
+  }
+}
+```
+This strategy expects an HTTP-Address to resolve to the most up-to-date version of your manifest. If you have a server you control this might be a viable option.
+  </TabItem>
+  <TabItem label="OfficialRegistry">
+```json {6}
+// minimal-example-with-official-registry/manifest.json
+{
+  "type": "v1alpha",
+  "name": "Hello World Minimal",
+  "remote_manifest": {
+    "type": "OfficialRegistry",
+  }
+}
+```
+This strategy gets the most recent manifest.json from the registry. It uses the Plugin ID to get the right manifest. Do note that you **mustn't rename plugin folders** as they are used to infer the plugin ID.
+Use this if you publish your plugin to the registry.
+  </TabItem>
+  <TabItem label="UnofficialRegistry">
+```json {6,7}
+// minimal-example-with-unofficial-registry/manifest.json
+{
+  "type": "v1alpha",
+  "name": "Hello World Minimal",
+  "remote_manifest": {
+    "type": "UnofficialRegistry",
+    "address": "https://somePluginDev.com/edpf-registry"
+  }
+}
+```
+Identical to `OfficialRegistry`, just that this uses another Registry URL.
+  </TabItem>
+</Tabs>
+
+
+## Main Bundle / index.js
+
+Your Plugin is defined as a class Definition for a [Web Component](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements#implementing_a_custom_element) within the `frontend/index.js` File.
+In essence, a Web Component is any class that `extends HTMLElement` (or any other classes that in turn extend from `HTMLElement`).
+
+An additional requirement for Plugins is that the *must* define a `initPlugin` Method. This Method is called once during setup and passes the Plugin *Context* to your Instance. With this Context, you can interact with EDPF and receive Data, but more on that [later](TODO).
+
+So, as an example, a minimal plugin would look like this:
+
+```js
+// minimal-example/frontend/index.js
+export default class MyPlugin extends HTMLElement {
+  #ctx = undefined
+  initPlugin(ctx) {
+    this.#ctx = ctx;
+    this.innerHTML = "<p> Hello, World! </p>"
+  }
+}
+```
+
+Of course, this example is a bit silly, as you don't really *do* anything in the plugin. It's just a static `Hello, World` text. We explore how to properly react to Journal events, read settings, write settings, etc. on a separate page.
+
+<LinkButton
+  href="/plugin-devs/context-example"
+  iconPlacement="start"
+  variant="secondary"
+  target="_blank"
+>
+  Jump to Context Docs
+</LinkButton>
+
+
+Besides the main component exported via `default`, a plugin *can* also export a class definition at `settings` to define a Settings component. 
+For it to load, this component *must* define an `initSettings(ctx)` method. Do note that the context provided here is similar, but slimmed down from the one passed to the main component. 
+
+Via this settings context, plugins can read and write Settings.
