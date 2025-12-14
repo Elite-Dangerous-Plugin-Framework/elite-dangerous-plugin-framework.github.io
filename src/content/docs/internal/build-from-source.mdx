@@ -1,0 +1,32 @@
+---
+title: Build from Source
+sidebar:
+  order: 20
+  badge: 
+    text: WIP
+    variant: tip
+---
+
+EDPF relies on Tauri under the hood. Tauri uses Rust on the "Backend" side and your system's WebView-Implementation on the "Frontend" side.
+For the frontend, we rely on `bun` for build tooling.
+
+Before attempting to run and build EDPF, go through this checklist.
+
+:::caution[Windows Instructions]
+Currently, build instructions are missing for Windows. This stems from the fact that EDPF is developed on Linux and there is no machine available for testing on Windows. If you have a Windows machine and want to extend the docs section here, PRs would be very welcome!
+:::
+
+import { Steps } from '@astrojs/starlight/components';
+
+<Steps>
+1. **Install Tauri System dependencies**. Tauri provides a thorough list of all required packages for most common Distributions and for Windows [here](https://v2.tauri.app/start/prerequisites/#system-dependencies).
+2. **Install Rust**. It is *very* recommended to install `rustup`. This is a version manager for Rust, which will make quickly switching versions or doing upgrades a lot easier in the future. You can get [rustup here](https://rustup.rs/#). Check if your platform provides it via the package manager instead first.
+3. **Install bun**. EDPF uses `bun` for building and bundling anything frontend related. You can get `bun` [here](https://bun.sh/). Check if your platform provides it via the package manager instead first.
+4. **Install the Tauri CLI**. Simply run `cargo install tauri-cli --version "^2.0.0" --locked`. ([reference](https://v2.tauri.app/reference/cli/)). `cargo` is build tooling for Rust and gets added to your `$PATH` by rustup.
+5. **Install frontend dependencies**. Simply run `bun i` in the project root once it's installed
+6. **Start dev mode**. Because you install the Tauri CLI you can now use `cargo tauri dev`. This will start the frontend dev server using `vite` and the Rust backend. If you do any file changes to your code, the Dev mode will automatically rebuild and restart your App.
+</Steps>
+
+## Bundle the App
+
+This is still missing

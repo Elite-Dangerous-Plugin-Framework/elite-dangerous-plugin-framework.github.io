@@ -154,9 +154,7 @@ So, as an example, a minimal plugin would look like this:
 ```js
 // minimal-example/frontend/index.js
 export default class MyPlugin extends HTMLElement {
-  #ctx = undefined
-  initPlugin(ctx) {
-    this.#ctx = ctx;
+  initPlugin(_ctx) {
     this.innerHTML = "<p> Hello, World! </p>"
   }
 }
@@ -165,12 +163,11 @@ export default class MyPlugin extends HTMLElement {
 Of course, this example is a bit silly, as you don't really *do* anything in the plugin. It's just a static `Hello, World` text. We explore how to properly react to Journal events, read settings, write settings, etc. on a separate page.
 
 <LinkButton
-  href="/plugin-devs/context-example"
-  iconPlacement="start"
+  href="/plugin-devs/hello-plugin"
   variant="secondary"
-  target="_blank"
+  icon="puzzle"
 >
-  Jump to Context Docs
+  Jump to Hello Plugin! Page
 </LinkButton>
 
 

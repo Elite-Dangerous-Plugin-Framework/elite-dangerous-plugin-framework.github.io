@@ -17,6 +17,10 @@ export default defineConfig({
           selectors: ["a[href]"],
           // @ts-ignore
           inspectEach(url) {
+            // local links stay locally, foreign links open in _blank
+            if (!(url.node.properties.href + "").startsWith("https://")) {
+              return;
+            }
             url.node.properties.target = "_blank";
           },
         },
