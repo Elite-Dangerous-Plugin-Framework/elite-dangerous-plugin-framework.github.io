@@ -1,0 +1,609 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" style="background: transparent; background-color: transparent; color-scheme: light dark;" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="891px" height="911px" viewBox="-0.5 -0.5 891 911" content="&lt;mxfile&gt;&lt;diagram id=&quot;f0GfngGKdn-56dP184BZ&quot; name=&quot;Page-1&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs/>
+    <g>
+        <g>
+            <rect x="131" y="0" width="180" height="120" fill="none" stroke="none" pointer-events="all"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 178px; height: 1px; padding-top: 7px; margin-left: 133px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: left; max-height: 116px; overflow: hidden; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">
+                                    <h1 style="margin-top: 0px;">
+                                        Backend
+                                    </h1>
+                                    <p>
+                                        The EDPF Backend. It knows when a WebView is reloaded
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="133" y="19" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px">
+                        Backend...
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <rect x="361" y="0" width="250" height="120" fill="none" stroke="none" pointer-events="all"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 248px; height: 1px; padding-top: 7px; margin-left: 363px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: left; max-height: 116px; overflow: hidden; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">
+                                    <h1 style="margin-top: 0px;">
+                                        WebView (e.g. Main)
+                                    </h1>
+                                    <p>
+                                        The Frontend. It loads Plugins
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="363" y="19" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px">
+                        WebView (e.g. Main)...
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <rect x="641" y="0" width="250" height="120" fill="none" stroke="none" pointer-events="all"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 248px; height: 1px; padding-top: 7px; margin-left: 643px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: left; max-height: 116px; overflow: hidden; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">
+                                    <h1 style="margin-top: 0px;">
+                                        Plugin
+                                    </h1>
+                                    <p>
+                                        Any plugin code. *could* be malicious
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="643" y="19" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px">
+                        Plugin...
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <ellipse cx="486" cy="105" rx="15" ry="15" fill="#ffffff" stroke="#000000" pointer-events="all" style="fill: light-dark(#ffffff, var(--ge-dark-color, #121212)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <path d="M 200.33 159.4 L 181 159.8 Q 171 160 171 170 L 171 190 Q 171 200 181 200 L 194.63 200" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 199.88 200 L 192.88 203.5 L 194.63 200 L 192.88 196.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <path d="M 471.77 109.74 L 450.49 116.84 Q 441 120 431 120.04 L 210.45 120.82" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 205.2 120.84 L 212.19 117.31 L 210.45 120.82 L 212.21 124.31 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <rect x="221" y="120" width="210" height="40" fill="none" stroke="none" pointer-events="all"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 140px; margin-left: 223px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: left; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: nowrap; ">
+                                    <span style="font-size: 11px;">
+                                        Backend is notified by Tauri-internal
+                                    </span>
+                                    <div style="scrollbar-color: rgb(75, 75, 75) rgb(27, 29, 30); font-size: 11px;">
+                                        <span style="">
+                                            Event logic that the WebView is ready
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="223" y="144" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px">
+                        Backend is notified by Tauri-intern...
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <rect x="221" y="160" width="210" height="40" fill="none" stroke="none" pointer-events="all"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 180px; margin-left: 223px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: left; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: nowrap; ">
+                                    <span style="font-size: 11px;">
+                                        Backend sets a flag internally allowing
+                                    </span>
+                                    <div>
+                                        <span style="font-size: 11px;">
+                                            the specific WebView to call command
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="223" y="184" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px">
+                        Backend sets a flag internally allo...
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <path d="M 471 215 L 217.37 215" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 212.12 215 L 219.12 211.5 L 217.37 215 L 219.12 218.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <rect x="221" y="220" width="220" height="40" fill="none" stroke="none" pointer-events="all"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 240px; margin-left: 223px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: left; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: nowrap; ">
+                                    <span style="font-size: 11px;">
+                                        WebView invoked get_root_token_once,
+                                        <br/>
+                                        before any Plugin is imported
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="223" y="244" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px">
+                        WebView invoked get_root_token_once,...
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <path d="M 471 280 L 231 280 Q 221 280 221 275 L 221 272.5 Q 221 270 211 270 L 201 270 Q 191 270 191 275 L 191 277.5 Q 191 280 181.05 280 L 171.1 280" fill="none" stroke="#2d7600" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(45, 118, 0), rgb(115, 177, 76));"/>
+            <path d="M 163.6 280 L 173.6 275 L 171.1 280 L 173.6 285 Z" fill="#2d7600" stroke="#2d7600" stroke-width="4" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(45, 118, 0), rgb(115, 177, 76)); stroke: light-dark(rgb(45, 118, 0), rgb(115, 177, 76));"/>
+        </g>
+        <g>
+            <rect x="221" y="285" width="270" height="40" fill="none" stroke="none" pointer-events="all"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 305px; margin-left: 223px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: left; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: nowrap; ">
+                                    <span style="font-size: 11px;">
+                                        WebView figures out which Plugins exist,
+                                    </span>
+                                    <div>
+                                        <span style="font-size: 11px;">
+                                            gets their import paths, using encrypted command
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="223" y="309" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px">
+                        WebView figures out which Plugins exist,...
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <rect x="481.93" y="120" width="8.13" height="680" fill="#000000" stroke="#000000" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <rect x="201" y="85" width="8.13" height="75" fill="#a20025" stroke="#6f0000" pointer-events="all" style="fill: light-dark(rgb(162, 0, 37), rgb(255, 173, 205)); stroke: light-dark(rgb(111, 0, 0), rgb(255, 197, 197));"/>
+        </g>
+        <g>
+            <rect x="201" y="160" width="8.13" height="60" fill="#60a917" stroke="#2d7600" pointer-events="all" style="fill: light-dark(rgb(96, 169, 23), rgb(74, 137, 12)); stroke: light-dark(rgb(45, 118, 0), rgb(115, 177, 76));"/>
+        </g>
+        <g>
+            <rect x="201" y="220" width="8.13" height="640" fill="#a20025" stroke="#6f0000" pointer-events="all" style="fill: light-dark(rgb(162, 0, 37), rgb(255, 173, 205)); stroke: light-dark(rgb(111, 0, 0), rgb(255, 197, 197));"/>
+        </g>
+        <g>
+            <path d="M 1 340 L 841 340" fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" stroke-dasharray="2 6" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <rect x="601" y="250" width="240" height="90" fill="none" stroke="none" pointer-events="all"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-end; width: 1px; height: 1px; padding-top: 295px; margin-left: 839px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: right; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: nowrap; ">
+                                    WebView can be deemed "safe"
+                                    <br/>
+                                    until this point. From here on,
+                                    <br/>
+                                    plugins are imported, which can
+                                    <br/>
+                                    have malicious code, even if the Plugin is
+                                    <br/>
+                                    not constructed!
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="839" y="299" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px" text-anchor="end">
+                        WebView can be deemed "safe"...
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <rect x="151" y="120" width="8.13" height="790" fill="#000000" stroke="#000000" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <path d="M 501 405 L 664.63 405" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 669.88 405 L 662.88 408.5 L 664.63 405 L 662.88 401.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <ellipse cx="686" cy="405" rx="15" ry="15" fill="#ffffff" stroke="#000000" pointer-events="all" style="fill: light-dark(#ffffff, var(--ge-dark-color, #121212)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <rect x="501" y="420" width="200" height="30" fill="none" stroke="none" pointer-events="all"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 435px; margin-left: 503px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: left; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: nowrap; ">
+                                    <span style="font-size: 11px;">
+                                        Frontend imports Plugin ES Module
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="503" y="439" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px">
+                        Frontend imports Plugin ES Module
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <rect x="681.94" y="420" width="8.13" height="380" fill="#000000" stroke="#000000" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <path d="M 1 480 L 71 480 L 71 495 L 61 510 L 1 510 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(#ffffff, var(--ge-dark-color, #121212)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 71 480 L 861 480 L 861 600 L 1 600 L 1 510" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 68px; height: 1px; padding-top: 495px; margin-left: 2px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">
+                                    Plugin behaves
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="36" y="499" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px" text-anchor="middle">
+                        Plugin beha...
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <rect x="461" y="510" width="100" height="60" fill="#ffffff" stroke="#000000" pointer-events="all" style="fill: light-dark(#ffffff, var(--ge-dark-color, #121212)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 98px; height: 1px; padding-top: 540px; margin-left: 462px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">
+                                    Plugin Context
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="511" y="544" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px" text-anchor="middle">
+                        Plugin Context
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <path d="M 681.94 539.66 L 567.37 539.66" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 562.12 539.66 L 569.12 536.16 L 567.37 539.66 L 569.12 543.16 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <path d="M 461 540 L 231 540 Q 221 540 221 535 L 221 532.5 Q 221 530 211 530 L 201 530 Q 191 530 191 535 L 191 537.5 Q 191 540 181 540 L 170.97 540" fill="none" stroke="#2d7600" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(45, 118, 0), rgb(115, 177, 76));"/>
+            <path d="M 163.47 540 L 173.47 535 L 170.97 540 L 173.47 545 Z" fill="#2d7600" stroke="#2d7600" stroke-width="4" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(45, 118, 0), rgb(115, 177, 76)); stroke: light-dark(rgb(45, 118, 0), rgb(115, 177, 76));"/>
+        </g>
+        <g>
+            <rect x="221" y="490" width="270" height="40" fill="none" stroke="none" pointer-events="all"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 510px; margin-left: 223px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: left; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: nowrap; ">
+                                    <span style="font-size: 11px;">
+                                        The Plugin Context does Access control, and then
+                                        <br/>
+                                        does the action for the plugin is admissible
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="223" y="514" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px">
+                        The Plugin Context does Access control, and t...
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <rect x="701" y="490" width="120" height="70" fill="none" stroke="none" pointer-events="all"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 525px; margin-left: 703px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: left; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: nowrap; ">
+                                    <span style="font-size: 11px;">
+                                        The plugin behaves
+                                        <br/>
+                                        and uses the
+                                        <br/>
+                                        plugin context to
+                                        <br/>
+                                        call commands
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="703" y="529" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px">
+                        The plugin behaves...
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <path d="M 1 610 L 71 610 L 71 625 L 61 640 L 1 640 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(#ffffff, var(--ge-dark-color, #121212)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 71 610 L 861 610 L 861 730 L 1 730 L 1 640" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 68px; height: 1px; padding-top: 625px; margin-left: 2px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">
+                                    Plugin is malicious
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="36" y="629" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px" text-anchor="middle">
+                        Plugin is m...
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <rect x="411" y="620" width="200" height="100" fill="#ffffff" stroke="#000000" pointer-events="all" style="fill: light-dark(#ffffff, var(--ge-dark-color, #121212)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 198px; height: 1px; padding-top: 670px; margin-left: 412px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">
+                                    Plugin goes against __TAURI_INTERNALS__
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="511" y="674" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px" text-anchor="middle">
+                        Plugin goes against __TAURI_INTER...
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <path d="M 690.07 669.66 L 617.37 669.97" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 612.12 670 L 619.1 666.46 L 617.37 669.97 L 619.13 673.46 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <rect x="701" y="625" width="160" height="60" fill="none" stroke="none" pointer-events="all"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 655px; margin-left: 703px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: left; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: nowrap; ">
+                                    <span style="font-size: 11px;">
+                                        The plugin misbehaves and
+                                        <br/>
+                                        uses Tauri internals to call
+                                        <br/>
+                                        events or subscribe
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="703" y="659" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px">
+                        The plugin misbehaves and...
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <path d="M 411 700 L 231 700 Q 221 700 221 695 L 221 692.5 Q 221 690 211 690 L 201 690 Q 191 690 191 695 L 191 697.5 Q 191 700 181 700 L 170.97 700" fill="none" stroke="#6f0000" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(111, 0, 0), rgb(255, 197, 197));"/>
+            <path d="M 163.47 700 L 173.47 695 L 170.97 700 L 173.47 705 Z" fill="#6f0000" stroke="#6f0000" stroke-width="4" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(111, 0, 0), rgb(255, 197, 197)); stroke: light-dark(rgb(111, 0, 0), rgb(255, 197, 197));"/>
+        </g>
+        <g>
+            <path d="M 411 650 L 217.37 650" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 212.12 650 L 219.12 646.5 L 217.37 650 L 219.12 653.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <rect x="221" y="610" width="150" height="40" fill="none" stroke="none" pointer-events="all"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 630px; margin-left: 223px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: left; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: nowrap; ">
+                                    <span style="font-size: 11px;">
+                                        The Backend rejects
+                                        <br/>
+                                        get_root_token_once call
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="223" y="634" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px">
+                        The Backend rejects...
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <rect x="221" y="730" width="260" height="40" fill="none" stroke="none" pointer-events="all"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 750px; margin-left: 223px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: left; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: nowrap; ">
+                                    <span style="font-size: 11px;">
+                                        The plugin can call the command, but will be
+                                        <br/>
+                                        rejected due to missing encryption in arguments
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="223" y="754" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px">
+                        The plugin can call the command, but will b...
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <rect x="221" y="770" width="260" height="40" fill="none" stroke="none" pointer-events="all"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 790px; margin-left: 223px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: left; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: nowrap; ">
+                                    <span style="font-size: 11px;">
+                                        The plugin can subscribe to events, but wont be
+                                        <br/>
+                                        able to read contents due to missing encryption
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="223" y="794" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px">
+                        The plugin can subscribe to events, but won...
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <rect x="211" y="830" width="230" height="30" fill="none" stroke="none" pointer-events="all"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 228px; height: 1px; padding-top: 845px; margin-left: 213px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: left; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">
+                                    calling get_root_token_once
+                                    <div>
+                                        red = disallowed, green = allowed
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="213" y="849" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px">
+                        calling get_root_token_once...
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <rect x="161" y="880" width="270" height="30" fill="none" stroke="none" pointer-events="all"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 268px; height: 1px; padding-top: 895px; margin-left: 163px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: left; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">
+                                    calling any other command / subscribing to events
+                                    <div>
+                                        Payloads are encrypted with root token
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="163" y="899" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px">
+                        calling any other command / subscribing to ev...
+                    </text>
+                </switch>
+            </g>
+        </g>
+    </g>
+    <switch>
+        <g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/>
+        <a transform="translate(0,-5)" xlink:href="https://www.drawio.com/doc/faq/svg-export-text-problems" target="_blank">
+            <text text-anchor="middle" font-size="10px" x="50%" y="100%">
+                Text is not SVG - cannot display
+            </text>
+        </a>
+    </switch>
+</svg>

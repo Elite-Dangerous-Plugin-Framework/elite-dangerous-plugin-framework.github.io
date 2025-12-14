@@ -4,6 +4,7 @@ import starlight from "@astrojs/starlight";
 import starlightThemeFlexoki from "starlight-theme-flexoki";
 import inspectUrls from "@jsdevtools/rehype-url-inspector";
 import starlightImageZoom from "starlight-image-zoom";
+import starlightHeadingBadges from "starlight-heading-badges";
 
 // https://astro.build/config
 export default defineConfig({
@@ -33,6 +34,7 @@ export default defineConfig({
       plugins: [
         starlightThemeFlexoki({ accentColor: "orange" }),
         starlightImageZoom(),
+        starlightHeadingBadges(),
       ],
       social: [
         {

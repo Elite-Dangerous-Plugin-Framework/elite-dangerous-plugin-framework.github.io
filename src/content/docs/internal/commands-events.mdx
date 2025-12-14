@@ -1,0 +1,500 @@
+---
+title: Commands & Events
+description: Reference about all defined Tauri Commands and Events
+---
+
+import { Badge } from '@astrojs/starlight/components';
+
+EDPF uses Tauri's IPC Infrastructure to communicate with Plugins. Journal Updates, Status File Updates, Settings updates, etc. are pushed towards the Frontend using Event emits, while Plugins can do actions within EDPF using Commands.
+
+Our commands and events can be grouped into one of the following categories:
+- <Badge text="Unencrypted" variant="success" size="large" /> 
+  Request and payload are unencrypted. This is mostly used by events, and for events that are deemed "public" information. 
+  This means that *technically* a plugin *could* import Tauri's helper functions and invoke / listen for these payloads — but said plugins would not acquire any new information they don't already have.
+- <Badge text="Encrypted"  size="large" /> Request and Response payloads are encrypted using 128bit AES-GCM. 
+  The request and response each do not contain the JSON payload, but a JSON containing a nonce/iv and the encrypted payload. 
+  Iv and Payload are encoded as base64 without padding.  
+  The encryption procedure is below in the [Encrypted Payloads](#encrypted-payloads) section.
+- <Badge text="Restricted" variant="danger"  size="large" /> This command is only invokable in very specific use-cases and not something Plugins can use. Look at the relevant command for conditions.
+  
+
+
+## Commands
+
+Below is a list of all commands.
+
+### fetch_all_plugins :badge[encrypted]
+This command returns EDPF's internal view onto Plugins. Basically, which plugins does it know about, and in which states are these plugins in?
+#### Input
+The input is empty. We stil provide an empty object here.
+```json
+{}
+```
+#### Output
+The output contains a Map of Plugin ID to the Plugin state.
+```json
+{
+  "plugin1": {
+    "id": "plugin1",
+    "currentState": {
+      "type": "Running"
+    },
+    "pluginDir": "thePathToYourPluginsDir/plugin1",
+    "manifest": {
+      "type": "v1alpha",
+      "name": "Human Readable Name for Plugin",
+      "description": "Here be a description"
+    },
+    "source": "UserProvided",
+    "frontend_hash": "…"
+  },
+  "plugin2": { /*…*/ }
+  // …
+}
+```
+
+### get_import_path_for_plugin :badge[encrypted]
+This command returns EDPF's internal view onto Plugins. Basically, which plugins does it know about, and in which states are these plugins in?
+#### Input
+The input contains the Plugin ID for the Plugin you wish to import.
+```json
+{
+  "pluginId": "myPlugin"
+}
+```
+#### Output
+The output contains a frontend hash that the backend currently knows about. The frontend can use this to figure out if it is up-to-date. It also contains the import Path to get the main module residing in `frontend/index.js`.
+```json
+{
+  "hash": "…",
+  "import": "http://localhost:12345/someHash/myPlugin/index.js"
+}
+```
+
+### open_settings :badge[encrypted]
+Opens the Settings WebView if it isn't opened yet. This isn't invoked by any plugin but only by the Main window.
+
+#### Input
+```json
+{}
+```
+#### Output
+There is no output. This command has however the side-effect of opening the Settings window.
+```json
+{}
+```
+
+### open_plugins_dir :badge[encrypted]
+Opens the Folder where User Plugins are located. This Command is used by the Settings WebView. The caller *can* provide a plugin ID in the input. Doing so will open the specific plugin folder. Omitting this property will open the top-level folder containing all User-provided plugins.
+
+#### Input
+
+```json
+{
+  "pluginId": "myPlugin"
+}
+// or
+{}
+```
+#### Output
+There is no output. This command has however the side-effect of opening the Folder for the plugin, or the parent folder, using your system's File Explorer.
+```json
+{}
+```
+
+### start_plugin :badge[encrypted]
+Tells EDPF that the user has requested the Plugin to be started. This is invoked by the Settings WebView and never by the Plugins.
+
+#### Input
+The input contains the Plugin ID for the Plugin you wish to start.
+```json
+{
+  "pluginId": "myPlugin"
+}
+```
+
+#### Output
+The response is empty, but unencrypted. This should be made consistent.
+
+
+### stop_plugin :badge[encrypted]
+Tells EDPF that the user has requested the Plugin to be stopped. This is invoked by the Settings WebView and never by the Plugins.
+
+#### Input
+The input contains the Plugin ID for the Plugin you wish to start.
+```json
+{
+  "pluginId": "myPlugin"
+}
+```
+
+#### Output
+The response is empty, but unencrypted. This should be made consistent.
+
+### start_plugin_failed :badge[encrypted]
+Called by the frontend of EDPF when trying to initialize a Plugin to notify the backend about the failure to start.
+This will cause the backend to mark the Plugin as failing to start.
+
+#### Input
+```json
+{
+  "pluginId": "pluginId",
+  "reasons": [
+    "NO_DEFAULT_EXPORT"
+  ]
+}
+```
+At the moment, `reasons` only ever contains one item. This item can be one of:
+- `MODULE_IMPORT_FAILED`
+- `NO_DEFAULT_EXPORT`
+- `DEFAULT_EXPORT_NOT_HTMLELEMENT`
+- `INSTANTIATION_FAILED`
+- `PLUGIN_INSTANCE_NOT_HTMLELEMENT`
+- `PLUGIN_MISSING_INIT_FUNCTION`
+- `PLUGIN_INIT_FUNCTION_ERRORED`
+- a `zod` error string from an invalid `get_import_path_for_plugin` invocation (should never happen).
+
+#### Output
+N/A
+### finalize_start_plugin :badge[encrypted]
+Called by the frontend of EDPF when a plugin instance was spawned successfully.
+This will cause the backend to mark the Plugin as running.
+
+#### Input
+```json
+{
+  "pluginId": "pluginId"
+}
+```
+#### Output
+N/A
+
+### finalize_stop_plugin :badge[encrypted]
+Called by the frontend of EDPF when a plugin instance was destroyed.
+This will cause the backend to mark the Plugin as stopped.
+
+#### Input
+```json
+{
+  "pluginId": "pluginId"
+}
+```
+#### Output
+N/A
+
+### sync_main_layout :badge[encrypted]
+Called by the frontend of EDPF, more specifically the Main component. This Command is used to either fetch or update the layout.
+The Layout is a Tree-like JSON defining at which location which plugin resides.
+
+#### Input 
+```json
+{}
+```
+when fetching, or 
+```json
+{
+  "layout": {
+    "root": {
+      "type": "VerticalLayout",
+      "meta": {…},
+      "identifier": "…",
+      "children": [
+        {
+          "type": "PluginCell",
+          "pluginId": "pluginName",
+          "meta": {…}
+        },
+        …
+      ]
+    }
+  }
+}
+```
+#### Output
+Responds with the new (or unchanged) layout.
+See JSON above.
+
+### reread_active_journal :badge[encrypted]
+
+:::caution
+This is an outlier in that it does not use any encryption when calling the command. This means that Plugins can *technically* call this command when circumventing EDPF, but will not be able to decode it.
+This might be made consistent in the future.
+:::
+
+Reareads the "active" files for all commands / game instances. Can be used for when Plugins / EDPF was started while Elite: Dangerous was already running.
+
+#### Input
+There is no input
+
+#### Output
+The output contains a list of File objects, each defining the CMDR they are used for, the File Path, and a list of journal entries. The journal entries are always sorted time-ascending.
+Entries are, just like in the event, serialized as string to allow for proper handling of big integers.
+
+```json
+[
+  {
+    "cmdr": "WDX",
+    "file": "file/path/to/journal/Journal.2025-12-11T231051.01.log",
+    "entries": [
+      "{ \"timestamp\":\"2025-12-11T22:10:47Z\", \"event\":\"Fileheader\", \"part\":1, \"language\":\"English/UK\", \"Odyssey\":true, \"gameversion\":\"4.3.0.1\", \"build\":\"r322188/r0 \" }",
+      "{ \"timestamp\":\"2025-12-11T22:11:12Z\", \"event\":\"Friends\", \"Status\":\"Online\", \"Name\":\"CMDR1\" }",
+      "{ \"timestamp\":\"2025-12-11T22:11:12Z\", \"event\":\"Friends\", \"Status\":\"Online\", \"Name\":\"CMDR2\" }",
+      "{ \"timestamp\":\"2025-12-11T22:11:12Z\", \"event\":\"Friends\", \"Status\":\"Online\", \"Name\":\"CMDR3\" }",
+      "{ \"timestamp\":\"2025-12-11T22:11:12Z\", \"event\":\"Friends\", \"Status\":\"Online\", \"Name\":\"CMDR4\" }",
+      "{ \"timestamp\":\"2025-12-11T22:11:12Z\", \"event\":\"Friends\", \"Status\":\"Online\", \"Name\":\"CMDR5\" }",
+      "{ \"timestamp\":\"2025-12-11T22:11:26Z\", \"event\":\"Commander\", \"FID\":\"FXXXXX\", \"Name\":\"WDX\" }",
+      …
+    ]
+  },
+  {
+    "cmdr": "Alt Account",
+    "file": "file/path/to/journal/Journal.2025-12-11T241051.01.log",
+    "entries": […]
+  }
+]
+```
+
+
+### write_setting :badge[encrypted]
+Writtes a Setting. A setting can have any valid JSON as the value.
+The key *must* start with the own Plugin name, followed by a separator dot. 
+If the first character of the last segment is uppercase, the setting is considered public. Public settings are writable and readable by your plugin, and readonly for any other plugins.
+Lowercase final segments are private, meaning only your own plugin may access them.
+
+#### Input
+
+```json
+{
+  "pluginId": "myPlugin",
+  "key": "myPlugin.some.public.Setting",
+  // last segment is uppercase ^^^^^^^
+  // its readonly by other plugins,
+  "value": "someValue"
+}
+```
+or
+```json
+{
+  "pluginId": "myPlugin",
+  "key": "myPlugin.some.private.setting",
+  // last segment is lowercase  ^^^^^^^
+  // its inaccesible by other plugins,
+  "value": {
+    "preference": "red",
+    "someNestedKey": 42
+  } // as you can see, values can be arbitrary JSON.
+}
+```
+
+#### Output
+```json
+{
+  "key": "myPlugin.some.public.Setting",
+  "value": "someValue"
+}
+```
+You get back the key and value as EDPF has stored it.
+
+In addition, an the `settings_update` event is emitted, containing the same output.
+
+
+### read_setting :badge[encrypted]
+
+Used to read settings. Contains the Plugin that requests the setting. Will error if the Plugin is not allowed to read it. Missing Settings do not error. Instead, you get back an object with a key, but no value.
+
+#### Input
+
+```json
+{
+  "pluginId": "myPlugin",
+  "key": "myPlugin.some.public.Setting",
+}
+```
+
+#### Output
+```json
+{
+  "key": "myPlugin.some.public.Setting",
+  "value": "someValue"
+}
+```
+or, if the setting doesn't exist:
+```json
+{
+  "key": "myPlugin.some.public.Setting"
+}
+```
+
+### get_plugin :badge[encrypted]
+Gets the current status of a Plugin.
+
+#### Input
+```json
+{
+  "pluginId": "pluginId"
+}
+```
+#### Output
+Very similar to [fetch_all_plugins](#fetch_all_plugins). Instead of returning a Map of items, we return that specific item directly.
+```json
+{
+  "id": "plugin1",
+  "currentState": {
+    "type": "Running"
+  },
+  "pluginDir": "thePathToYourPluginsDir/plugin1",
+  "manifest": {
+    "type": "v1alpha",
+    "name": "Human Readable Name for Plugin",
+    "description": "Here be a description"
+  },
+  "source": "UserProvided",
+  "frontend_hash": "…"
+}
+``` 
+
+### get_root_token_once :badge[restricted]{variant=danger}
+This command can be invoked at the very start of a WebView's Lifecycle. 
+At startup EDPF creates a 128bit AES key (the "root token").
+
+The `main` and `settings` Web Views (Primary Window hosting Plugins and Settings Window respectively) can invoke this command once. They do so before any plugins are loaded.
+This is further discussed in [Encrypted Payloads](#encrypted-payloads) Section.
+
+#### Input
+There is no input, but the Backend explicitly checks from which WebView the command was called.
+
+#### Output
+The response does not follow the usual payload pattern. Instead, the entire response is
+```json 
+{
+  "success": true,
+  "data": "base64-encoded-no-pad AES Key"
+}
+```
+
+## Events
+
+Events are one-directional communications from the Backend towards the Frontend. Events may have a trigger in the frontend (e.g. writing a setting), but dont have to (e.g Journal update).
+
+### journal_events :badge[unencrypted]{variant=success}
+A new batch of Journal events is emitted.
+
+This event is the most abundant event being emitted by EDPF. It's contents are not considered a secret — every plugin has access to read the Journal without any additional permissions — which is why this Event does not have any encryption.
+A plugin *could* use the Tauri object attached to the window to also receive the event that way, but they don't gain any information this way.
+
+This event is emitted from an Event watchdog task. Said task only concerns itself with one file, hence if there would be multiple watched Journals updated at the same time, we would see two separate `journal_events`, one per CMDR, be emitted.
+
+#### Output
+```json
+[
+  {
+    "cmdr": "WDX",
+    "source": "file/path/to/journal/Journal.2025-12-11T231051.01.log",
+    "event": "{ \"timestamp\":\"2025-12-11T22:10:47Z\", \"event\":\"Fileheader\", \"part\":1, \"language\":\"English/UK\", \"Odyssey\":true, \"gameversion\":\"4.3.0.1\", \"build\":\"r322188/r0 \" }"
+  },
+  {
+    "cmdr": "WDX",
+    "source": "file/path/to/journal/Journal.2025-12-11T231051.01.log",
+    "event": "{ \"timestamp\":\"2025-12-11T22:11:12Z\", \"event\":\"Friends\", \"Status\":\"Online\", \"Name\":\"CMDR1\" }"
+  },
+  …
+]
+``` 
+
+:::tip
+We could think about optimizing the response into 
+```json
+{
+  "cmdr": "WDX",
+  "source": "file/path/to/journal/Journal.2025-12-11T231051.01.log",
+  "entries": [
+    …
+  ]
+}
+```
+here, because these emits are always tied to a Handler, which is tied to a specific file. This would also make this more inline with the [`reread_active_journal`](#reread_active_journal) command.
+:::
+
+### settings_update :badge[encrypted]
+Emitted when a new setting is written.
+
+#### Output
+The event payload is identical to the response of [`write_setting`](#write_setting), e.g. 
+
+```json
+{
+  "key": "myPlugin.some.public.Setting",
+  "value": "someValue"
+}
+```
+
+Do note that this means that everyone with a root token could snoop for all settings. However, only EDPF and the Plugin Context's it constructs have this Token.
+The Plugin Contexts make sure that the plugin only gets this event passed on if it is allowed to read it.
+
+## Encrypted Payloads
+
+### Rationale
+You might be wondering… why does EDPF even encrypt events and commands.
+
+At this point in time, we do not have any "critical" functionality. But in the future there might be means to read files, write files, etc. 
+This functionality should only be allowed if the user has explicitly allowed a plugin to do it. 
+
+Also, Plugins can store secrets in their settings. Other Plugins should not be able to extract those secrets by pretending to be the initial plugin.
+
+Tauri has means to figure out where a Command was called from and to limit event propagation to specific *windows*. 
+However, our plugins all run on the `main` WebView, so we cannot differentiate that way. 
+
+This means that we cannot prevent plugins from invoking commands or listening to events. We can however make sure that Plugins can't get anything useful out of it.
+By having the Frontend hold a Secret that is **not exposed to plugins**, EDPF can act as a facade towards all Events and Commands. In fact, this is exactly what the `PluginContext` is doing.
+
+EDPF creates the context, injects the root token into it, and only then is the plugin initialized with the context. The context already knows what plugin it's for, which permissions it has, and can reject or omit data because of this.
+
+### Implementation
+
+EDPF's Backend spawns the relevant WebViews and knows when a webview is reloaded. The Backend subscribes to this "internal" event. This is not something Plugins can fake.
+If we receive this event, we set an internal flag to temporarily allow a WebView to call [`get_root_token_once`](#get_root_token_once). As the name implies, this can only be called once (per Webview Lifecycle).
+
+This call **must happen before any Plugin code is imported**! This way we can be assured that no Plugin's `index.js` contains code to access the Tauri object via the window to call this function.
+
+![Overview of how the token is fetched](./commands-events-encrypted-payloads.drawio.svg)
+
+### Payload
+
+The request and response over the wire is always a JSON. 
+
+**Requests** are always an encrypted payload and a nonce value:
+```json
+{
+  "iv": "base64-no-padding-encoded-nonce",
+  "payload": "base64-no-padding-encoded-encrypted-JSON"
+}
+```
+You can find the implementation for how an input JSON is encrypted into an `iv` and `payload` [here](https://github.com/Elite-Dangerous-Plugin-Framework/elite-dangerous-plugin-framework/blob/main/src/commands/commandUtils.ts).
+
+The **response** contains a `data` object if, and only if, the `success` property is true. The `data` object contains `iv` and `payload`. Combined with the root token, the payload can be decrypted.
+
+```json
+{
+  "success": false,
+  "reason": "RESPONSE_STRUCTURE_INVALID"
+} 
+/* or */
+{
+  "success": true,
+  "data": {
+    "iv": "…",
+    "payload": "…"
+  }
+}
+```
+
+Encryption and Decryption is done using AES-128 GCM. This is a **symmetric** encryption scheme, meaning we use the same Key 
+to de- and encrypt the payload. The "root token" that is generated by the Backend and passed to Web Views using the 
+[`get_root_token_once`](#get_root_token_once) command is used as a key here.
+
+Whenever a request or response is created, the writer generates a 12 Byte long random value. This is the "nonce" / "intitialization vector".
+This is passed along with the encrypted message. 
+
+Here is a graph detailling the invocation of a command from the Frontend. The response essentially goes through the same steps, just in reverse.
+
+![End to End flow of encrypting and decrypting a message](./commands-events-e2e-encryption.drawio.svg)
