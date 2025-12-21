@@ -1,0 +1,26 @@
+---
+title: "Draft: Plugin Registry"
+sidebar:
+  order: 50
+draft: true
+---
+
+
+One of EDPF's core goals is to make publishing and installing plugins as easy and intuitive as possible.
+
+For this, we make the following assumption:
+- Developers know how to use Git and can follow instructions on setting up a Github / Gitlab CI Pipeline to build releases
+- Users shouldn't be expected to leave the application to go looking for plugins. Users shouldn't have to care about Git, Github/Gitlab and Releases.
+
+## The Goal
+
+A plugin registry acts as a way to make plugins discoverable. It lets EDPF simply fetch a JSON containing all known plugins and their metadata, making it easy to search for Plugins from within EDPF. 
+Said JSON may also contain version data for a Plugin, making it easy to have EDPF replace an outdated plugin's version with a new one.
+
+The idea would be to have plugin developers register their plugins via a PR within the registry. 
+This registration consists of a JSON that is placed in the registry repository. It contains some metadata about the Plugin like 
+- Plugin ID
+- Repository
+- Potentially the Developer's Public Key for Signed Releases
+
+A Github Action then runs periodically, fetching all plugins 

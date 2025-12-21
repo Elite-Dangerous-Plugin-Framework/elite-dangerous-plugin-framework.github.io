@@ -1,6 +1,8 @@
 ---
 title: Commands & Events
 description: Reference about all defined Tauri Commands and Events
+sidebar:  
+  order: 40
 ---
 
 import { Badge } from '@astrojs/starlight/components';
@@ -101,6 +103,24 @@ There is no output. This command has however the side-effect of opening the Fold
 ```json
 {}
 ```
+### open_url :badge[encrypted]
+Opens a URL. Every plugin can do this as this is deemed a safe operation.
+
+#### Input
+
+```json
+{
+  "pluginId": "myPlugin",
+  "url": "https://inara.cz"
+}
+```
+The Plugin ID is currently not used in any way. It is provided here for forward compatibility in the case we needed in the future.
+#### Output
+There is no output. The response is not encrypted and may contain the usual `success: true|false` with `reason:…` if the response is not successful.
+```json
+{}
+```
+
 
 ### start_plugin :badge[encrypted]
 Tells EDPF that the user has requested the Plugin to be started. This is invoked by the Settings WebView and never by the Plugins.

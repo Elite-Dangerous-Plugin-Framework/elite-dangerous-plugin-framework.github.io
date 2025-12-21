@@ -26,7 +26,7 @@ Plugins then receive updates about the game via a callback function. This is sim
 
 The core dev behind EDPF, CMDR WDX, has spent a significant time [developing](https://github.com/CMDR-WDX/EDMC-Massacres) [plugins](https://gitlab.com/gankers/EDMC-PvPBot) [for](https://gitlab.com/CMDR-WDX/edmc-raven-colonial) EDMC.
 EDPF is the attempt to curb some frustrations that arised during that time, caused primarily by the use of `tkinter` for UI and the gotcha's that come with relying on `python`, 
-as well as the lack of any opinionated ways of working. For example instead of having a streamlined way to update plugins, each plugin has to either roll its own or rely on manual updates.
+as well as the lack of any opinionated ways of working. For example instead of having a streamlined way to update plugins, each plugin has to either roll its own or rely on manual updates[^1].
 
 ## Vision
 
@@ -54,3 +54,6 @@ You can see the progress of this release [in the following Github Project](https
 
 After the MVP, EDPF's priority will be to establish a plugin registry and means to easily install private plugins via Drag-and-Drop.
 The registry will be a way for plugin authors to submit their plugins into a registry. This way users will be able to easily discover and install it from within EDPF.
+
+## Footnotes
+[^1]: EDMC is currently also [looking into](https://discord.com/channels/164411426939600896/726419472772235306/1449977660854898748) [improving Plugin Handling](https://discord.com/channels/164411426939600896/251742967927144449/1449806561198477505) by providing means to discover and update plugins directly from EDMC. (Requires membership in the EDCD Discord to access)

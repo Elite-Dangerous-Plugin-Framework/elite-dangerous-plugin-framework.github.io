@@ -147,7 +147,7 @@ Identical to `OfficialRegistry`, just that this uses another Registry URL.
 Your Plugin is defined as a class Definition for a [Web Component](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements#implementing_a_custom_element) within the `frontend/index.js` File.
 In essence, a Web Component is any class that `extends HTMLElement` (or any other classes that in turn extend from `HTMLElement`).
 
-An additional requirement for Plugins is that the *must* define a `initPlugin` Method. This Method is called once during setup and passes the Plugin *Context* to your Instance. With this Context, you can interact with EDPF and receive Data, but more on that [later](TODO).
+An additional requirement for Plugins is that the *must* define a `initPlugin` Method. This Method is called once during setup and passes the Plugin *Context* to your Instance. With this Context, you can interact with EDPF and receive Data, but more on that [later](/internal/build-from-source).
 
 So, as an example, a minimal plugin would look like this:
 
