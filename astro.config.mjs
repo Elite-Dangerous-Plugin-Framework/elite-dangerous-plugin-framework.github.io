@@ -36,6 +36,10 @@ export default defineConfig({
         starlightImageZoom(),
         starlightHeadingBadges(),
       ],
+      editLink: {
+        baseUrl:
+          "https://github.com/Elite-Dangerous-Plugin-Framework/elite-dangerous-plugin-framework.github.io/tree/main/",
+      },
       social: [
         {
           icon: "github",
@@ -44,7 +48,7 @@ export default defineConfig({
         },
       ],
       customCss: ["./src/styles/custom.css"],
-
+      lastUpdated: true,
       sidebar: [
         {
           label: "For Users",
